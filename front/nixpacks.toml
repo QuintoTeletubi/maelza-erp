@@ -1,0 +1,11 @@
+[variables]
+NODE_VERSION = "20.9.0"
+
+[phases.build]
+cmds = [
+    "npm ci --no-audit",
+    "npm run build"
+]
+
+[phases.start]
+cmd = "npm run preview -- --host 0.0.0.0 --port $PORT"
