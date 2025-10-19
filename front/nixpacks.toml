@@ -1,9 +1,13 @@
 [variables]
-NODE_VERSION = "20.9.0"
+NODE_VERSION = "20.18.0"
+
+[phases.setup]
+nixPkgs = ["nodejs-20_x", "npm-10_x"]
 
 [phases.build]
 cmds = [
-    "npm ci --no-audit",
+    "npm cache clean --force",
+    "npm install --force",
     "npm run build"
 ]
 
